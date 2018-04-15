@@ -1,18 +1,15 @@
 package com.jian.buyms.system.service.impl;
 
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
-
-import sun.misc.BASE64Encoder;
-
 import com.jian.buyms.system.dao.UsersDao;
 import com.jian.buyms.system.model.Users;
 import com.jian.buyms.system.service.LoginService;
+import org.springframework.stereotype.Service;
+import sun.misc.BASE64Encoder;
+
+import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 @Service
 public class LoginServiceImpl implements LoginService {
@@ -23,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
 		// TODO Auto-generated method stub
 		Users user = usersDao.getUserInfo(username);
 		if (user != null) {
-			if (user.getPasswd().equals(EncoderByMd5(password)) || user.getPasswd().equals(password)) {
+			if (user.getPassword().equals(EncoderByMd5(password)) || user.getPassword().equals(password)) {
 					return user;
 			}
 		}

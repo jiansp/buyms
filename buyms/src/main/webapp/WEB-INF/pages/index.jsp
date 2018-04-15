@@ -7,14 +7,14 @@
 <body data-spy="scroll" data-target="#myScrollspy">
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h3>
-                h3. 这是一套可视化布局系统.
+        <div class="col-md-12" style=" background-color: #3A70C9;">
+            <h3 style="color: white;font-family: '微软雅黑'">
+                海涛管理平台
             </h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3" style="height: 100%;background-color: #afd9ee">
             <ul class="nav nav-list">
                 <li class="nav-header">
                     列表标题
@@ -44,57 +44,87 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-8">
-            <ul class="thumbnails">
-                <li class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="${ctx}/img/a.jpg" />
-                        <div class="caption">
-                            <h3>
-                                冯诺尔曼结构
-                            </h3>
-                            <p>
-                                也称普林斯顿结构，是一种将程序指令存储器和数据存储器合并在一起的存储器结构。程序指令存储地址和数据存储地址指向同一个存储器的不同物理位置。
-                            </p>
-                            <p>
-                                <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
-                            </p>
-                        </div>
+        <div class="col-md-9">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Brand</a>
                     </div>
-                </li>
-                <li class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="${ctx}/img/a.jpg" />
-                        <div class="caption">
-                            <h3>
-                                哈佛结构
-                            </h3>
-                            <p>
-                                哈佛结构是一种将程序指令存储和数据存储分开的存储器结构，它的主要特点是将程序和数据存储在不同的存储空间中，进行独立编址。
-                            </p>
-                            <p>
-                                <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="${ctx}/img/a.jpg" />
-                        <div class="caption">
-                            <h3>
-                                改进型哈佛结构
-                            </h3>
-                            <p>
-                                改进型的哈佛结构具有一条独立的地址总线和一条独立的数据总线，两条总线由程序存储器和数据存储器分时复用，使结构更紧凑。
-                            </p>
-                            <p>
-                                <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <table class="table table-hover">
+                <caption>悬停表格布局</caption>
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>城市</th>
+                    <th>邮编</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tanmay</td>
+                    <td>Bangalore</td>
+                    <td>560001</td>
+                </tr>
+                <tr>
+                    <td>Sachin</td>
+                    <td>Mumbai</td>
+                    <td>400003</td>
+                </tr>
+                <tr>
+                    <td>Uma</td>
+                    <td>Pune</td>
+                    <td>411027</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

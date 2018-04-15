@@ -1,23 +1,20 @@
 package com.jian.buyms.system.controller;
 
-import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import com.jian.buyms.system.model.Users;
+import com.jian.buyms.system.service.LoginService;
+import com.jian.buyms.system.vo.Json;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import sun.misc.BASE64Encoder;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import sun.misc.BASE64Encoder;
-
-import com.jian.buyms.system.model.Users;
-import com.jian.buyms.system.service.LoginService;
-import com.jian.buyms.system.vo.Json;
+import java.io.ByteArrayOutputStream;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 
 @Controller
@@ -30,13 +27,12 @@ public class LoginController{
 	@ResponseBody
 	@RequestMapping("/login")
 	public Json login(Users users, HttpSession session) {
-
 		Json j = new Json();
 		try {
-			String passWd = new String(decode(users.getPasswd()));
-			users.setPasswd(passWd);
-			Users sysuser = loginService.login(users.getUserName(),
-					users.getPasswd());
+			String passWd = new String(decode(users.getPassword()));
+			users.setPassword(passWd);
+			Users sysuser = loginService.login(users.getUsername(),
+					users.getPassword());
 			
 			if (sysuser != null) {
 

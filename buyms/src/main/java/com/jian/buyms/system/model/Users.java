@@ -20,12 +20,8 @@ public class Users  implements java.io.Serializable {
     // Fields    
 
      private String id;
-     private String userName;
-     private String passwd;
-
-
-    // Constructors
-
+     private String username;
+     private String password;
     /** default constructor */
     public Users() {
     }
@@ -34,16 +30,7 @@ public class Users  implements java.io.Serializable {
     public Users(String id) {
         this.id = id;
     }
-    
-    /** full constructor */
-    public Users(String id, String userName, String passwd) {
-        this.id = id;
-        this.userName = userName;
-        this.passwd = passwd;
-    }
 
-   
-    // Property accessors
     @Id 
     
     @Column(name="ID", unique=true, nullable=false, length=32)
@@ -56,24 +43,24 @@ public class Users  implements java.io.Serializable {
         this.id = id;
     }
     
-    @Column(name="USER_NAME", length=100)
+    @Column(name="USERNAME", length=100)
 
-    public String getUserName() {
-        return this.userName;
+    public String getUsername() {
+        return username;
     }
-    
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    
-    @Column(name="PASSWD", length=200)
 
-    public String getPasswd() {
-        return this.passwd;
+    public void setUsername(String username) {
+        this.username = username;
     }
     
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+    @Column(name="PASSWORD", length=200)
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
    
 
