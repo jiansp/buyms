@@ -60,6 +60,14 @@ public class LoginController{
 		return "/index";
 	}
 
+	@RequestMapping("/edit")
+	public String edit(HttpServletRequest request) {
+		/*if(request.getSession().getAttribute("currentUser") == null){
+			return "/login";
+		}*/
+		return "/edit";
+	}
+
 	@ResponseBody
 	@RequestMapping("/logout")
 	public Json logout(HttpSession session) {
