@@ -57,15 +57,7 @@ public class LoginController{
 		/*if(request.getSession().getAttribute("currentUser") == null){
 			return "/login";
 		}*/
-		return "/index";
-	}
-
-	@RequestMapping("/edit")
-	public String edit(HttpServletRequest request) {
-		/*if(request.getSession().getAttribute("currentUser") == null){
-			return "/login";
-		}*/
-		return "/edit";
+		return "/shopRecord/index";
 	}
 
 	@ResponseBody

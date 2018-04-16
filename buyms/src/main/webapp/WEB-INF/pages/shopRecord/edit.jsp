@@ -8,21 +8,16 @@
     })
     function save() {
         $.ajax({
-            url: "${ctx}/login/login",
+            url: "${ctx}/shopRecord/save",
             type: "post",
             data: $("#infoForm").serialize(),
             dataType: "json",
-            beforeSend: function () {
-
-            },
             error: function () {
-
-            },
-            complete: function () {
+                alert("系统错误");
             },
             success: function (data) {
                 if(data.success == true){
-                    window.location.href='${ctx}/login/index';
+                    alert(data.msg);
                 }else{
                     alert(data.msg);
                 }
@@ -44,13 +39,13 @@
             <br>
             <div class="input-group">
                 <span class="input-group-addon">购买时间</span>
-                <input type="text" name="datetime" class="form-control" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii">
+                <input type="text" name="shopTime" class="form-control" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii">
             </div>
             <br>
 
             <div class="input-group">
                 <span class="input-group-addon">受骗对象</span>
-                <input type="text" class="form-control" name="object">
+                <input type="text" class="form-control" name="shopObject" >
             </div>
 
             <br>

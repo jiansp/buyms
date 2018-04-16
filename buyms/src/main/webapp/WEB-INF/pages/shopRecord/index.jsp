@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Bootstrap 附加导航（Affix）插件</title>
-    <jsp:include page="inc.jsp"></jsp:include>
+    <jsp:include page="../inc.jsp"></jsp:include>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy">
 <div class="container-fluid">
@@ -65,7 +65,7 @@
                             <button type="button" class="btn btn-default">查询</button>
                         </form>
 
-                        <button href="${ctx}/login/edit" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#editModal">添加</button>
+                        <button href="${ctx}/shopRecord/edit" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#editModal">添加</button>
                         <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#editModal">
                             修改
                         </button>
@@ -82,63 +82,6 @@
             <div class="modal fade" id="editModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content" style="width: 55%;margin: 20% auto">
-                        <div>
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">编辑1</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form class="bs-example bs-example-form" role="form">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">商品名称</span>
-                                        <input type="text" class="form-control" placeholder="twitterhandle">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">购买时间</span>
-                                        <input type="text" value="2012-05-15 21:05" class="form-control" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii">
-                                    </div>
-                                    <br>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon">受骗对象</span>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">网站</span>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <div class="input-group-btn">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">币种
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a href="#">人民币</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">美元</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">日元</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">欧元</a>
-                                                </li>
-                                            </ul>
-                                        </div><!-- /btn-group -->
-                                        <input type="text" class="form-control">
-                                    </div><!-- /input-group -->
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary">提交更改</button>
-                            </div>
-                        </div>
                     </div>
                 </div><!-- /.modal -->
             </div>
