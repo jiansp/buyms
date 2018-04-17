@@ -3,6 +3,7 @@ package com.jian.buyms.system.controller;
 import com.alibaba.druid.util.StringUtils;
 import com.jian.buyms.system.model.ShopRecord;
 import com.jian.buyms.system.service.ShopRecordService;
+import com.jian.buyms.system.vo.Grid;
 import com.jian.buyms.system.vo.Json;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("shopRecord")
@@ -35,6 +38,7 @@ public class ShopRecordController {
         try {
             if (StringUtils.isEmpty(shopRecord.getId())) {
                 shopRecord.setCreateDate(new Date());
+                shopRecord.setLifeCycle(1);
                 this.shopRecordService.save(shopRecord);
             } else {
                 ShopRecord old = this.shopRecordService.getById(shopRecord.getId());
@@ -50,5 +54,16 @@ public class ShopRecordController {
             result.setSuccess(false);
         }
         return result;
+    }
+
+    @ResponseBody
+    @RequestMapping("/bootstrapTable")
+    public Grid bootstrapTable(int limit, int offset) {
+        Grid grid = new Grid();
+        List<Map> lstRes = this.shopRecordService.getList(limit , offset);
+        int count = this.shopRecordService.getListCount();
+        grid.setRows(lstRes);
+        grid.setTotal(Long.valueOf(count));
+        return grid;
     }
 }
