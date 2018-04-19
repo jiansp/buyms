@@ -19,6 +19,7 @@
                 if(data.success == true){
                     alert(data.msg);
                     $('#editModal').modal('hide');
+                    $('#addModal').modal('hide');
                 }else{
                     alert(data.msg);
                 }

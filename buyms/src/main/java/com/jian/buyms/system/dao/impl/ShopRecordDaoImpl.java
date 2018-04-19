@@ -25,7 +25,7 @@ public class ShopRecordDaoImpl extends BaseDaoImpl implements ShopRecordDao {
     public List<Map> getList(int limit, int offset) {
         StringBuffer sql = new StringBuffer();
         sql.append("select s.id , s.good_name goodName , s.shop_object shopObject , s.money , s.money_type moneyType ,s.website ,s.shop_time shopTime ");
-        sql.append("from t_shop_record s where life_cycle = 1");
+        sql.append(" , s.creator_name creatorName from t_shop_record s where life_cycle = 1");
         sql.append(" LIMIT " + offset + "," + (limit - 1 + offset));
         return this.findListMapBySql(sql.toString());
     }

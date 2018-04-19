@@ -3,6 +3,7 @@ package com.jian.buyms.system.controller;
 import com.jian.buyms.system.model.Users;
 import com.jian.buyms.system.service.LoginService;
 import com.jian.buyms.system.vo.Json;
+import com.jian.buyms.system.vo.SessionInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,14 +32,14 @@ public class LoginController{
 		try {
 			String passWd = new String(decode(users.getPassword()));
 			users.setPassword(passWd);
-			Users sysuser = loginService.login(users.getUsername(),
-					users.getPassword());
-			
+			Users sysuser = loginService.login(users.getUsername(), users.getPassword());
 			if (sysuser != null) {
-
 				j.setSuccess(true);
 				j.setMsg("登陆成功！");
-				session.setAttribute("currentUser", sysuser);
+				SessionInfo sessionInfo = new SessionInfo();
+				sessionInfo.setId(sysuser.getId());
+				sessionInfo.setName(sysuser.getUsername());
+				session.setAttribute("currentUser", sessionInfo);
 			} else {
 				j.setMsg("用户名或密码错误！");
 			}

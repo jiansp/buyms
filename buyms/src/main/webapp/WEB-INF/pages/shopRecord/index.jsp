@@ -9,9 +9,15 @@
         function operateFormatter(value, row, index) {
             var href = "${ctx}/shopRecord/edit?id="+row.id;
             return [
-                '<button type="button" class="btn btn-warning" style="margin-right:10px;">删除</button>',
+                '<button type="button" class="btn btn-warning" style="margin-right:10px;" data-toggle="modal" data-target="#delModal">删除</button>',
                 '<button type="button" class="btn btn-info" style="margin-right:10px;" href="'+href+'" data-toggle="modal" data-target="#editModal">修改</button>'
             ].join('');
+        }
+        function initModel(id , href) {
+            $(".modal-content").empty();
+            $('#'+id).modal({
+                remote: href
+            });
         }
         $(function () {
             //1.初始化Table
@@ -156,6 +162,23 @@
             <div class="modal fade" id="editModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content" style="width: 55%;margin: 20% auto">
+                    </div>
+                </div><!-- /.modal -->
+            </div>
+            <div class="modal fade" id="delModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="width: 55%;margin: 20% auto">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">询问</h4>
+                        </div>
+                        <div class="modal-body">
+                            是否要删除本条数据？
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" onclick="del()">确定</button>
+                        </div>
                     </div>
                 </div><!-- /.modal -->
             </div>
